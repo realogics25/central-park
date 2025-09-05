@@ -1,0 +1,46 @@
+.logo-text {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+}
+
+/* Hide Central Park logo between md (956px) and 1208px */
+@media (min-width: 956px) and (max-width: 1208px) {
+    .logo-text {
+        display: none !important;
+    }
+}
+
+/* Prevent text wrapping in navigation */
+.nav-link {
+    white-space: nowrap;
+}
+
+.mobile-menu {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+.hamburger-line {
+    transition: all 0.3s ease;
+}
+
+.hamburger.open .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}

@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luxurious Service Apartment">
+    <title>Luxurious Service Apartment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'md': '956px',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-white">
+    <!-- Top Bar -->
+    <div class="bg-gray-800 h-1 w-full">
+        <div class="bg-blue-500 h-full w-16"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <div class="logo-text">Central Park</div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-900 hover:text-amber-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Home</a>
+                        <a href="#about" class="nav-link text-gray-900 hover:text-amber-600 px-3 py-2 text-lg font-bold transition-colors duration-200">About</a>
+                        <a href="#overview" class="nav-link text-gray-900 hover:text-amber-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Overview</a>
+                        <a href="#amenities" class="nav-link text-gray-900 hover:text-amber-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Amenities</a>
+                        <a href="#contact" class="nav-link text-gray-900 hover:text-amber-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Download Brochure</a>
+                    </div>
+                </div>
+
+                <!-- Contact Button -->
+                <div class="hidden md:block">
+                    <a href="tel:+919999221307" class="inline-flex items-center px-4 py-2 border border-gray-900 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-200 rounded">
+                        <i class="fas fa-phone mr-2"></i>
+                        7982045917
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="hamburger inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-amber-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-500">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Hamburger Icon -->
+                        <div class="w-6 h-6 flex flex-col justify-center items-center">
+                            <div class="hamburger-line w-5 h-0.5 bg-current mb-1 transition-all duration-300"></div>
+                            <div class="hamburger-line w-5 h-0.5 bg-current mb-1 transition-all duration-300"></div>
+                            <div class="hamburger-line w-5 h-0.5 bg-current transition-all duration-300"></div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-y-0 left-0 w-2/3 max-w-sm bg-white shadow-xl z-50">
+            <div class="flex flex-col h-full">
+                <!-- Mobile menu header with centered logo and close button -->
+                <div class="flex items-center justify-between p-6 border-b">
+                    <div class="logo-text text-2xl">Central Park</div>
+                    <button id="mobile-menu-close" class="text-gray-900 hover:text-amber-600 transition-colors duration-200">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile menu items -->
+                <div class="flex-1 px-6 py-8 space-y-6">
+                    <a href="#home" class="block text-gray-900 hover:text-amber-600 text-lg font-medium transition-colors duration-200">Home</a>
+                    <a href="#about" class="block text-gray-900 hover:text-amber-600 text-lg font-medium transition-colors duration-200">About</a>
+                    <a href="#overview" class="block text-gray-900 hover:text-amber-600 text-lg font-medium transition-colors duration-200">Overview</a>
+                    <a href="#amenities" class="block text-gray-900 hover:text-amber-600 text-lg font-medium transition-colors duration-200">Amenities</a>
+                    <a href="#contact" class="block text-gray-900 hover:text-amber-600 text-lg font-medium transition-colors duration-200">Download Brochure</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu overlay -->
+        <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+    </nav>
+
+    <!-- Separator Line -->
+    <div class="w-full h-px bg-gray-900"></div>    
+
+    <!-- Main Content Area -->
+    <section id="home" class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <!-- Header -->
+                    <div class="text-center lg:text-left">
+                        <p class="text-orange-500 font-medium text-lg mb-2 italic">First Residential Glass Façade Towers</p>
+                        <h1 class="text-5xl lg:text-6xl font-black text-gray-900 mb-4 leading-tight">
+                            Central <span class="text-gray-800">Park</span>
+                        </h1>
+                        <div class="w-24 h-1 bg-gray-900 mx-auto lg:mx-0 mb-6"></div>
+                        
+                        <div class="space-y-2">
+                            <p class="text-xl text-gray-700">
+                                <span class="text-orange-500 font-bold">1 BHK</span> & STUDIO APARTMENT Starting at
+                            </p>
+                            <p class="text-4xl font-bold text-gray-900">₹30,000*  <span class="text-gray-500 text-lg">Per Sq. ft.</span>  </p>
+                        </div>
+                        
+                        <div class="w-24 h-1 bg-gray-900 mx-auto lg:mx-0 mt-6"></div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="text-center lg:text-left">
+                        <p class="text-lg font-semibold text-gray-800 tracking-wider">
+                            DWARKA EXPRESSWAY, GURUGRAM
+                        </p>
+                    </div>
+
+                    <!-- Payment Plans -->
+                    <div class="space-y-4">
+                        <!-- Easy Payment Plan -->
+                        <div class="inline-block">
+                            <div class="border-2 border-gray-800 rounded-lg px-6 py-3 bg-white">
+                                <p class="text-lg font-medium text-gray-800">
+                                    Easy <span class="text-orange-500 font-bold">30:30:40</span> Payment Plan
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Special Offer -->
+                        <div class="inline-block">
+                            <div class="border-2 border-gray-800 rounded-lg px-6 py-4 bg-white">
+                                <p class="text-lg font-medium text-gray-800">
+                                    Pay Now 30% & No Payments <span class="text-orange-500 font-bold">Till 3.5 Years</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                        <button class="bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-colors duration-300 shadow-lg">
+                            <a href="#contact"></a>Download Brochure</a>
+                        </button>
+                        <a href="tel:+919999221307" class="bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-colors duration-300 shadow-lg text-center">
+                            Call Now : +91 7982045917
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="relative">
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                        <img 
+                            src="assests/images/img1.jpeg" 
+                            alt="Central Park - Luxury Residential Building" 
+                            class="w-full h-auto object-cover"
+                        >
+                        <!-- Image Overlay for better text readability if needed -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-30"></div>
+                    </div>
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
+                        <p class="text-sm font-semibold text-gray-800">Premium Glass Façade Towers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div class="order-2 lg:order-1">
+                    <div class="mb-8">
+                        <h2 class="text-orange-500 text-lg font-medium mb-3 tracking-wide">DISCOVER LUXURY LIVING</h2>
+                        <h1 class="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+                            Central Park Sector 104<br>
+                            <span class="text-orange-500">Dwarka Expressway</span>
+                        </h1>
+                        <div class="w-24 h-1 bg-orange-500 mb-8"></div>
+                    </div>
+
+                    <div class="space-y-6 text-gray-700 leading-relaxed">
+                        <p class="text-lg">
+                            Central Park presents an <strong>exclusive ultra-luxury residential address</strong> in Sector 104, Gurgaon, 
+                            perfectly located along the rapidly developing Dwarka Expressway. Spanning 12.5 acres, this landmark 
+                            development features striking high-rise towers rising up to 52 floors, offering panoramic city views and 
+                            thoughtfully designed layouts.
+                        </p>
+
+                        <p class="text-lg">
+                            With a mix of premium <strong>studio residences and 1 BHK apartments</strong>, the project redefines 
+                            contemporary luxury living in one of NCR's most sought-after destinations. Each residence is crafted 
+                            with meticulous attention to detail, featuring premium finishes and modern amenities.
+                        </p>
+
+                        <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-orange-500">
+                            <p class="text-lg font-medium text-gray-800">
+                                Life at Central Park Sector 104 is about unmatched comfort and indulgence, with access to a wide range of 
+                                world-class amenities. From a grand clubhouse, infinity-edge pool, spa and wellness centre, and fine-dining 
+                                options to sky lounges, landscaped gardens, jogging tracks, indoor recreation zones, a business lounge, 
+                                and 24/7 concierge services.
+                            </p>
+                        </div>
+
+                        <p class="text-lg">
+                            The secure gated community ensures complete <strong>privacy, safety, and convenience</strong> for its residents. 
+                            Enjoy seamless connectivity via the Dwarka Expressway, with easy access to IGI Airport, Cyber City, NH-48, 
+                            and major commercial hubs.
+                        </p>
+
+                        <div class="pt-4">
+                            <p class="text-lg font-semibold text-gray-900 mb-4">
+                                Surrounded by reputed schools, healthcare facilities, shopping centres, and modern infrastructure, 
+                                Central Park Sector 104 Gurgaon stands out as the perfect destination for both end-users and investors 
+                                seeking premium real estate in a fast-growing corridor.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="mt-10">
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            <a href="#contact">DOWNLOAD BROCHURE</a>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="order-1 lg:order-2">
+                    <div class="relative">
+                        <!-- Main Image Container -->
+                        <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+                            <img 
+                                src="assests/images/img2.jpg" 
+                                alt="Central Park Luxury Interior - Premium Living Space" 
+                                class="w-full h-[600px] object-cover"
+                            >
+                            <!-- Gradient Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-transparent"></div>
+                        </div>
+                        
+                        <!-- Floating Stats Cards -->
+                        <div class="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+                            <div class="text-center">
+                                <div class="text-3xl font-black text-orange-500 mb-1">12.5</div>
+                                <div class="text-sm font-semibold text-gray-600">ACRES</div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute -top-8 -right-8 bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+                            <div class="text-center">
+                                <div class="text-3xl font-black text-orange-500 mb-1">850+</div>
+                                <div class="text-sm font-semibold text-gray-600">UNITS</div>
+                            </div>
+                        </div>
+
+                        <!-- Luxury Badge -->
+                        <div class="absolute top-6 left-6 bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                            Ultra-Luxury Living
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Features Grid -->
+            <div class="mt-20">
+                <h3 class="text-3xl font-black text-gray-900 text-center mb-12">Why Choose Central Park?</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors duration-300">
+                            <i class="fas fa-building text-2xl text-orange-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Premium Location</h4>
+                        <p class="text-gray-600">Strategically located on Dwarka Expressway with excellent connectivity</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors duration-300">
+                            <i class="fas fa-swimming-pool text-2xl text-orange-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">World-Class Amenities</h4>
+                        <p class="text-gray-600">Infinity pool, clubhouse, spa, fitness center and premium facilities</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors duration-300">
+                            <i class="fas fa-shield-alt text-2xl text-orange-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Secure Community</h4>
+                        <p class="text-gray-600">Gated community with 24/7 security and smart home features</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors duration-300">
+                            <i class="fas fa-chart-line text-2xl text-orange-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Great Investment</h4>
+                        <p class="text-gray-600">High appreciation potential in NCR's fastest growing corridor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black text-gray-900 mb-4">Overview</h2>
+                <div class="w-24 h-1 bg-gray-900 mx-auto"></div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="tab-btn active bg-black text-white px-6 py-3 rounded-lg font-medium text-sm hover:bg-gray-800 transition-all duration-300" data-tab="project">
+                    About Project
+                </button>
+                <button class="tab-btn bg-white border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium text-sm hover:border-gray-400 transition-all duration-300" data-tab="floor">
+                    Floor Plan
+                </button>
+                <button class="tab-btn bg-white border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium text-sm hover:border-gray-400 transition-all duration-300" data-tab="landmarks">
+                    Landmarks
+                </button>
+                <button class="tab-btn bg-white border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium text-sm hover:border-gray-400 transition-all duration-300" data-tab="connectivity">
+                    Connectivity
+                </button>
+                <button class="tab-btn bg-white border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium text-sm hover:border-gray-400 transition-all duration-300" data-tab="localities">
+                    Nearby Localities
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content-container">
+                <!-- About Project Tab -->
+                <div id="project-tab" class="tab-content active">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">About Project</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- Total Area -->
+                            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="text-lg font-semibold text-gray-800">Total Area</h4>
+                                    <i class="fas fa-expand-arrows-alt text-gray-600"></i>
+                                </div>
+                                <p class="text-xl font-bold text-gray-900">12.5 Acres</p>
+                            </div>
+
+                            <!-- Tower Height -->
+                            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="text-lg font-semibold text-gray-800">Tower Height</h4>
+                                    <i class="fas fa-building text-gray-600"></i>
+                                </div>
+                                <p class="text-xl font-bold text-gray-900">Ground + 52</p>
+                            </div>
+
+                            <!-- Total Towers -->
+                            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="text-lg font-semibold text-gray-800">Total Towers</h4>
+                                    <i class="fas fa-city text-gray-600"></i>
+                                </div>
+                                <p class="text-xl font-bold text-gray-900">4</p>
+                            </div>
+
+                            <!-- Total Units -->
+                            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="text-lg font-semibold text-gray-800">Total Units</h4>
+                                    <i class="fas fa-home text-gray-600"></i>
+                                </div>
+                                <p class="text-xl font-bold text-gray-900">850 Approx</p>
+                            </div>
+
+                            <!-- Possession -->
+                            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="text-lg font-semibold text-gray-800">Possession</h4>
+                                    <i class="fas fa-calendar-alt text-gray-600"></i>
+                                </div>
+                                <p class="text-xl font-bold text-gray-900">Dec 2028</p>
+                            </div>
+
+                            <!-- RERA Registration -->
+                            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 md:col-span-2 lg:col-span-1">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="text-lg font-semibold text-gray-800">RERA Registration</h4>
+                                    <i class="fas fa-certificate text-gray-600"></i>
+                                </div>
+                                <p class="text-sm font-bold text-gray-900">RC/REP/HARERA/GGM/963/695/2025/66</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floor Plan Tab -->
+                <div id="floor-tab" class="tab-content hidden">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Floor Plans</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Studio Apartment -->
+                            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                <h4 class="text-xl font-semibold text-gray-800 mb-4">Studio Apartment</h4>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Carpet Area:</span>
+                                        <span class="font-semibold">320-380 sq.ft</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Balcony Area:</span>
+                                        <span class="font-semibold">40-60 sq.ft</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Total Units:</span>
+                                        <span class="font-semibold">350 Units</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 1 BHK -->
+                            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                <h4 class="text-xl font-semibold text-gray-800 mb-4">1 BHK Apartment</h4>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Carpet Area:</span>
+                                        <span class="font-semibold">450-520 sq.ft</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Balcony Area:</span>
+                                        <span class="font-semibold">60-80 sq.ft</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Total Units:</span>
+                                        <span class="font-semibold">500 Units</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Landmarks Tab -->
+                <div id="landmarks-tab" class="tab-content hidden">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Nearby Landmarks</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800">IGI Airport</h4>
+                                <p class="text-gray-600">25 Minutes</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800">Cyber Hub</h4>
+                                <p class="text-gray-600">15 Minutes</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800">Connaught Place</h4>
+                                <p class="text-gray-600">35 Minutes</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800">Kingdom of Dreams</h4>
+                                <p class="text-gray-600">12 Minutes</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800">Ambience Mall</h4>
+                                <p class="text-gray-600">18 Minutes</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800">IFFCO Chowk</h4>
+                                <p class="text-gray-600">20 Minutes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connectivity Tab -->
+                <div id="connectivity-tab" class="tab-content hidden">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Connectivity</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800 mb-4">Metro Connectivity</h4>
+                                <div class="space-y-3">
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h5 class="font-semibold">Dwarka Sector 21 Metro</h5>
+                                        <p class="text-gray-600">8 Minutes Drive</p>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h5 class="font-semibold">Upcoming Metro Station</h5>
+                                        <p class="text-gray-600">2 Minutes Walk</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800 mb-4">Road Connectivity</h4>
+                                <div class="space-y-3">
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h5 class="font-semibold">Dwarka Expressway</h5>
+                                        <p class="text-gray-600">Direct Access</p>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h5 class="font-semibold">NH-8</h5>
+                                        <p class="text-gray-600">10 Minutes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nearby Localities Tab -->
+                <div id="localities-tab" class="tab-content hidden">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Nearby Localities</h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                                <h4 class="font-semibold text-gray-800">Sector 104</h4>
+                                <p class="text-gray-600">2 km</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                                <h4 class="font-semibold text-gray-800">Sector 105</h4>
+                                <p class="text-gray-600">1.5 km</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                                <h4 class="font-semibold text-gray-800">Sector 106</h4>
+                                <p class="text-gray-600">3 km</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                                <h4 class="font-semibold text-gray-800">Sector 107</h4>
+                                <p class="text-gray-600">2.5 km</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                                <h4 class="font-semibold text-gray-800">Sector 108</h4>
+                                <p class="text-gray-600">4 km</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                                <h4 class="font-semibold text-gray-800">Sector 109</h4>
+                                <p class="text-gray-600">3.5 km</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Amenities Section -->
+    <section id="amenities" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 to-amber-50">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-4">Amenities</h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Experience luxury living with world-class amenities designed to elevate your lifestyle
+                </p>
+            </div>
+
+            <!-- Main Amenities Grid -->
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <!-- Featured Amenity 1 -->
+                <div class="lg:col-span-2">
+                    <div class="relative group overflow-hidden rounded-3xl shadow-2xl h-80 bg-gradient-to-br from-blue-600 to-blue-800">
+                        <img 
+                            src="assests/images/img3.jpg" 
+                            alt="Infinity Pool - Luxury Swimming Experience" 
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-8 left-8 text-white">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-swimming-pool text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Infinity Pool</h3>
+                            <p class="text-lg opacity-90">Rooftop infinity pool with panoramic city views</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Amenity 2 -->
+                <div>
+                    <div class="relative group overflow-hidden rounded-3xl shadow-2xl h-80 bg-gradient-to-br from-green-600 to-emerald-800">
+                        <img 
+                            src="assests/images/img4.jpg" 
+                            alt="Wellness & Fitness Center" 
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-8 left-8 text-white">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-dumbbell text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Wellness Center</h3>
+                            <p class="text-sm opacity-90">State-of-the-art fitness & spa facilities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary Amenities Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Clubhouse -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-xl h-64 bg-gradient-to-br from-purple-600 to-indigo-800">
+                    <img 
+                        src="assests/images/img5.jpg" 
+                        alt="Premium Clubhouse" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-building text-lg text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-1">Premium Clubhouse</h3>
+                        <p class="text-sm opacity-90">Exclusive social hub</p>
+                    </div>
+                </div>
+
+                <!-- Gardens -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-xl h-64 bg-gradient-to-br from-green-500 to-teal-700">
+                    <img 
+                        src="assests/images/img6.jpg" 
+                        alt="Landscaped Gardens" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-leaf text-lg text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-1">Landscaped Gardens</h3>
+                        <p class="text-sm opacity-90">Zen green spaces</p>
+                    </div>
+                </div>
+
+                <!-- Smart Living -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-xl h-64 bg-gradient-to-br from-orange-500 to-red-600">
+                    <img 
+                        src="assests/images/img7.jpg" 
+                        alt="Smart Home Automation" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-home text-lg text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-1">Smart Automation</h3>
+                        <p class="text-sm opacity-90">Intelligent living</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amenities Icon Grid -->
+            <div class="bg-white rounded-3xl shadow-xl p-12">
+                <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Complete Lifestyle Amenities</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                    <!-- Row 1 -->
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-building text-3xl text-orange-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">Timeless Architecture</h4>
+                        <p class="text-sm text-gray-600">Modern glass façade design</p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-tree text-3xl text-green-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">Open Spaces</h4>
+                        <p class="text-sm text-gray-600">85% open green areas</p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-mobile-alt text-3xl text-blue-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">Smart Automation</h4>
+                        <p class="text-sm text-gray-600">IoT enabled residences</p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-shield-alt text-3xl text-purple-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">Top Security</h4>
+                        <p class="text-sm text-gray-600">24/7 surveillance system</p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-indigo-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-car text-3xl text-indigo-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">Ample Parking</h4>
+                        <p class="text-sm text-gray-600">Multi-level parking</p>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-teal-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-spa text-3xl text-teal-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">Wellness Facilities</h4>
+                        <p class="text-sm text-gray-600">Spa, yoga & meditation</p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-emerald-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-recycle text-3xl text-emerald-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">Sustainability</h4>
+                        <p class="text-sm text-gray-600">Eco-friendly features</p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-concierge-bell text-3xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">Concierge Services</h4>
+                        <p class="text-sm text-gray-600">Premium lifestyle support</p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-cyan-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-water text-3xl text-cyan-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">Infinity Pools</h4>
+                        <p class="text-sm text-gray-600">Rooftop aquatic paradise</p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-rose-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-laptop text-3xl text-rose-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-1">Co-working Spaces</h4>
+                        <p class="text-sm text-gray-600">Professional work hubs</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center mt-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Experience Luxury Living</h3>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Discover a lifestyle where every amenity is designed to enhance your daily living experience
+                </p>
+                <button class="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Schedule a Visit
+                </button>
+            </div>
+        </div>
+    </section>
+
+        <!-- Contact Us Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to experience luxury living? Fill out the form below and our team will get back to you.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Fill this form to Proceed.</h3>
+                    
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="ff987f5b-04b4-46ac-9136-0db42b6d9789">
+                        
+                        <!-- Interest in Central Park -->
+                        <div>
+                            <label for="interest" class="block text-sm font-semibold text-gray-700 mb-3">
+                                Are you interested in Central Park?
+                            </label>
+                            <select id="interest" name="interest" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200">
+                                <option value="">Select your interest level</option>
+                                <option value="Yes - Very Interested">Yes - Very Interested</option>
+                                <option value="Yes - Moderately Interested">Yes - Moderately Interested</option>
+                                <option value="Maybe - Need More Information">Maybe - Need More Information</option>
+                                <option value="No - Just Browsing">No - Just Browsing</option>
+                            </select>
+                        </div>
+
+                        <!-- Apartment Type -->
+                        <div>
+                            <label for="apartment_type" class="block text-sm font-semibold text-gray-700 mb-3">
+                                What type of apartment are you looking for?
+                            </label>
+                            <select id="apartment_type" name="apartment_type" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200">
+                                <option value="">Select apartment type</option>
+                                <option value="Studio - 320-380 Sq.ft">Studio - 320-380 Sq.ft</option>
+                                <option value="1 BHK - 450-520 Sq.ft">1 BHK - 450-520 Sq.ft</option>
+                                <option value="Any - Show me options">Any - Show me options</option>
+                            </select>
+                        </div>
+
+                        <!-- Visit Planning -->
+                        <div>
+                            <label for="visit_time" class="block text-sm font-semibold text-gray-700 mb-3">
+                                When are you planning to visit the location?
+                            </label>
+                            <select id="visit_time" name="visit_time" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200">
+                                <option value="">Select visit timeline</option>
+                                <option value="This Week">This Week</option>
+                                <option value="Next Week">Next Week</option>
+                                <option value="This Month">This Month</option>
+                                <option value="Next Month">Next Month</option>
+                                <option value="Within 3 Months">Within 3 Months</option>
+                                <option value="Just Exploring">Just Exploring</option>
+                            </select>
+                        </div>
+
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-3">
+                                Full Name
+                            </label>
+                            <input type="text" id="name" name="name" required 
+                                   placeholder="Enter your full name"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200">
+                        </div>
+
+                        <!-- Phone -->
+                        <div>
+                            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-3">
+                                Phone Number
+                            </label>
+                            <input type="tel" id="phone" name="phone" required 
+                                   placeholder="Enter your phone number"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200">
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-3">
+                                Email Address
+                            </label>
+                            <input type="email" id="email" name="email" required 
+                                   placeholder="Enter your email address"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200">
+                        </div>
+
+                        <!-- Additional Message -->
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-3">
+                                Additional Message (Optional)
+                            </label>
+                            <textarea id="message" name="message" rows="4" 
+                                      placeholder="Any specific questions or requirements?"
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 resize-none"></textarea>
+                        </div>
+
+                        <!-- Hidden fields for Web3Forms -->
+                        <input type="hidden" name="subject" value="New Central Park Inquiry">
+                        <input type="hidden" name="from_name" value="Central Park Website">
+
+                        <!-- Submit Button -->
+                        <button type="submit" 
+                                class="w-full bg-black text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Submit
+                        </button>
+                    </form>
+
+                    <!-- Contact Info -->
+                    <div class="mt-8 pt-8 border-t border-gray-200">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="text-center md:text-left">
+                                <h4 class="font-semibold text-gray-900 mb-2">Call Us</h4>
+                                <a href="tel:+917982045917" class="text-orange-500 hover:text-orange-600 font-medium">
+                                    +91 7982045917
+                                </a>
+                            </div>
+                            <div class="text-center md:text-left">
+                                <h4 class="font-semibold text-gray-900 mb-2">Location</h4>
+                                <p class="text-gray-600 text-sm">Dwarka Expressway, Gurugram</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map -->
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden h-fit">
+                    <div class="h-[600px] relative">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=28.500028,77.007212&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Central Park Location - Dwarka Expressway, Gurugram">
+                        </iframe>
+                        
+                        <!-- Map Overlay Info -->
+                        <div class="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg max-w-xs">
+                            <h4 class="font-bold text-gray-900 mb-2">Central Park</h4>
+                            <p class="text-sm text-gray-600 mb-3">Dwarka Expressway, Sector 104, Gurugram</p>
+                            <div class="flex items-center text-orange-500">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span class="text-sm font-medium">Prime Location</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Contact Information -->
+            <div class="mt-16 grid md:grid-cols-3 gap-8">
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors duration-300">
+                        <i class="fas fa-clock text-2xl text-orange-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">Office Hours</h4>
+                    <p class="text-gray-600">Mon - Sat: 9:00 AM - 7:00 PM<br>Sun: 10:00 AM - 6:00 PM</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500 transition-colors duration-300">
+                        <i class="fas fa-car text-2xl text-blue-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">Site Visits</h4>
+                    <p class="text-gray-600">Free site visits available<br>Call to schedule your tour</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-500 transition-colors duration-300">
+                        <i class="fas fa-headset text-2xl text-green-500 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">24/7 Support</h4>
+                    <p class="text-gray-600">Our team is always ready<br>to assist you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <!-- Main Footer Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="mb-6">
+                        <div class="logo-text text-3xl mb-4">Central Park</div>
+                        <p class="text-gray-300 text-lg leading-relaxed max-w-md">
+                            Experience luxury living in the heart of Dwarka Expressway. Premium glass façade towers 
+                            offering studio and 1 BHK apartments with world-class amenities.
+                        </p>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-orange-500 w-5 mr-3"></i>
+                            <span class="text-gray-300">Dwarka Expressway, Sector 104, Gurugram</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-orange-500 w-5 mr-3"></i>
+                            <a href="tel:+917982045917" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">
+                                +91 7982045917
+                            </a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-orange-500 w-5 mr-3"></i>
+                            <a href="mailto:info@centralpark.com" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">
+                                info@centralpark.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">About</a></li>
+                        <li><a href="#overview" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">Overview</a></li>
+                        <li><a href="#amenities" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">Amenities</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Apartment Types -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-6">Apartment Types</h3>
+                    <ul class="space-y-3">
+                        <li class="text-gray-300">
+                            <span class="font-semibold text-orange-500">Studio:</span> 320-380 sq.ft
+                        </li>
+                        <li class="text-gray-300">
+                            <span class="font-semibold text-orange-500">1 BHK:</span> 450-520 sq.ft
+                        </li>
+                        <li class="text-gray-300">
+                            <span class="font-semibold text-orange-500">Starting:</span> ₹30,000/sq.ft
+                        </li>
+                        <li class="text-gray-300">
+                            <span class="font-semibold text-orange-500">Possession:</span> Dec 2028
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="mt-12 pt-8 border-t border-gray-800">
+                <h3 class="text-lg font-bold text-white mb-6 text-center">Why Choose Central Park?</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-building text-white"></i>
+                        </div>
+                        <h4 class="font-semibold text-white mb-1">Glass Façade Towers</h4>
+                        <p class="text-gray-400 text-sm">Modern architecture</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-swimming-pool text-white"></i>
+                        </div>
+                        <h4 class="font-semibold text-white mb-1">Infinity Pool</h4>
+                        <p class="text-gray-400 text-sm">Rooftop luxury</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-shield-alt text-white"></i>
+                        </div>
+                        <h4 class="font-semibold text-white mb-1">24/7 Security</h4>
+                        <p class="text-gray-400 text-sm">Safe & secure</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-road text-white"></i>
+                        </div>
+                        <h4 class="font-semibold text-white mb-1">Prime Location</h4>
+                        <p class="text-gray-400 text-sm">Dwarka Expressway</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media & CTA -->
+            <div class="mt-12 pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <!-- Social Media -->
+                    <div class="mb-6 md:mb-0">
+                        <h4 class="font-semibold text-white mb-3">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300">
+                                <i class="fab fa-facebook-f text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300">
+                                <i class="fab fa-instagram text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300">
+                                <i class="fab fa-twitter text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300">
+                                <i class="fab fa-youtube text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300">
+                                <i class="fab fa-linkedin-in text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="text-center md:text-right">
+                        <h4 class="font-semibold text-white mb-3">Ready to Invest?</h4>
+                        <div class="space-y-2 sm:space-y-0 sm:space-x-4 sm:flex">
+                            <a href="tel:+917982045917" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300">
+                                Call Now
+                            </a>
+                            <a href="#contact" class="inline-block border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300">
+                                Book Site Visit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="bg-black border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2024 Central Park. All rights reserved. | RERA: RC/REP/HARERA/GGM/963/695/2025/66
+                    </div>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-200">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-200">Terms & Conditions</a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-200">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+      
+    <script src="js/main.js"></script>
+</body>
+</html>
