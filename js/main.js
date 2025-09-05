@@ -1,3 +1,50 @@
+// Popup Modal functionality
+const popupModal = document.getElementById('popup-modal');
+const closePopupButton = document.getElementById('close-popup');
+
+// Show popup on page load
+function showPopup() {
+    // Check if popup was already shown in this session
+    if (!sessionStorage.getItem('popupShown')) {
+        // Show popup after a delay (2 seconds)
+        setTimeout(() => {
+            popupModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }, 2000);
+    }
+}
+
+// Close popup function
+function closePopup() {
+    popupModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    // Mark popup as shown for this session
+    sessionStorage.setItem('popupShown', 'true');
+}
+
+// Close popup when clicking the close button
+closePopupButton.addEventListener('click', closePopup);
+
+// Close popup when clicking outside the modal
+popupModal.addEventListener('click', (e) => {
+    if (e.target === popupModal) {
+        closePopup();
+    }
+});
+
+// Close popup on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popupModal.style.display === 'flex') {
+        closePopup();
+    }
+});
+
+// Close popup when form is submitted
+const popupForm = popupModal.querySelector('form');
+popupForm.addEventListener('submit', () => {
+    setTimeout(closePopup, 1000); // Close after 1 second to allow form submission
+});
+
 // Mobile menu functionality
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -94,3 +141,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     showTab('project');
 });
+
+// Initialize popup on page load
+document.addEventListener('DOMContentLoaded', showPopup);

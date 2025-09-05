@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Luxurious Service Apartment">
-    <title>Luxurious Service Apartment</title>
+    <meta name="description" content="Central Park - Luxurious Service Apartment">
+    <title>Central Park - Luxurious Service Apartment</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -21,6 +21,108 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="bg-white">
+    <!-- Popup Modal -->
+    <div id="popup-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-6 border-b">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900">Get Exclusive Details</h3>
+                    <p class="text-gray-600 text-sm mt-1">Fill out the form to receive detailed information</p>
+                </div>
+                <button id="close-popup" class="text-gray-400 hover:text-gray-600 transition-colors duration-200">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Modal Form -->
+            <div class="p-6">
+                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                    <!-- Web3Forms Access Key -->
+                    <input type="hidden" name="access_key" value="ff987f5b-04b4-46ac-9136-0db42b6d9789">
+                    
+                    <!-- Interest in Central Park -->
+                    <div>
+                        <label for="popup-interest" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Are you interested in Central Park?
+                        </label>
+                        <select id="popup-interest" name="interest" required 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm">
+                            <option value="">Select your interest level</option>
+                            <option value="Yes - Very Interested">Yes - Very Interested</option>
+                            <option value="Yes - Moderately Interested">Yes - Moderately Interested</option>
+                            <option value="Maybe - Need More Information">Maybe - Need More Information</option>
+                            <option value="No - Just Browsing">No - Just Browsing</option>
+                        </select>
+                    </div>
+
+                    <!-- Apartment Type -->
+                    <div>
+                        <label for="popup-apartment-type" class="block text-sm font-semibold text-gray-700 mb-2">
+                            What type of apartment are you looking for?
+                        </label>
+                        <select id="popup-apartment-type" name="apartment_type" required 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm">
+                            <option value="">Select apartment type</option>
+                            <option value="Studio - 320-380 Sq.ft">Studio - 320-380 Sq.ft</option>
+                            <option value="1 BHK - 450-520 Sq.ft">1 BHK - 450-520 Sq.ft</option>
+                            <option value="Any - Show me options">Any - Show me options</option>
+                        </select>
+                    </div>
+
+                    <!-- Name -->
+                    <div>
+                        <label for="popup-name" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Full Name
+                        </label>
+                        <input type="text" id="popup-name" name="name" required 
+                               placeholder="Enter your full name"
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm">
+                    </div>
+
+                    <!-- Phone -->
+                    <div>
+                        <label for="popup-phone" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Phone Number
+                        </label>
+                        <input type="tel" id="popup-phone" name="phone" required 
+                               placeholder="Enter your phone number"
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm">
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="popup-email" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Email Address
+                        </label>
+                        <input type="email" id="popup-email" name="email" required 
+                               placeholder="Enter your email address"
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm">
+                    </div>
+
+                    <!-- Hidden fields for Web3Forms -->
+                    <input type="hidden" name="subject" value="New Central Park Popup Inquiry">
+                    <input type="hidden" name="from_name" value="Central Park Website Popup">
+
+                    <!-- Submit Button -->
+                    <button type="submit" 
+                            class="w-full bg-blue-500 text-white py-3 px-6 rounded-lg font-semibold text-sm hover:bg-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        Get Detailed Information
+                    </button>
+                </form>
+
+                <!-- Contact Info -->
+                <div class="mt-4 pt-4 border-t border-gray-200">
+                    <div class="text-center">
+                        <p class="text-gray-600 text-sm mb-2">Or call us directly</p>
+                        <a href="tel:+917982045917" class="text-blue-500 hover:text-blue-600 font-medium text-sm">
+                            +91 7982045917
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Top Bar -->
     <div class="bg-gray-800 h-1 w-full">
         <div class="bg-blue-500 h-full w-16"></div>
@@ -32,17 +134,17 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <div class="logo-text">Central Park</div>
+                    <img src="assests/images/centralparklogo.png" alt="Central Park Logo" class="h-12 w-auto">
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="nav-link text-gray-900 hover:text-amber-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Home</a>
-                        <a href="#about" class="nav-link text-gray-900 hover:text-amber-600 px-3 py-2 text-lg font-bold transition-colors duration-200">About</a>
-                        <a href="#overview" class="nav-link text-gray-900 hover:text-amber-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Overview</a>
-                        <a href="#amenities" class="nav-link text-gray-900 hover:text-amber-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Amenities</a>
-                        <a href="#contact" class="nav-link text-gray-900 hover:text-amber-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Download Brochure</a>
+                        <a href="#home" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Home</a>
+                        <a href="#about" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">About</a>
+                        <a href="#overview" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Overview</a>
+                        <a href="#amenities" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Amenities</a>
+                        <a href="#contact" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Download Brochure</a>
                     </div>
                 </div>
 
@@ -56,7 +158,7 @@
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="hamburger inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-amber-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-500">
+                    <button id="mobile-menu-button" class="hamburger inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
                         <span class="sr-only">Open main menu</span>
                         <!-- Hamburger Icon -->
                         <div class="w-6 h-6 flex flex-col justify-center items-center">
@@ -74,19 +176,19 @@
             <div class="flex flex-col h-full">
                 <!-- Mobile menu header with centered logo and close button -->
                 <div class="flex items-center justify-between p-6 border-b">
-                    <div class="logo-text text-2xl">Central Park</div>
-                    <button id="mobile-menu-close" class="text-gray-900 hover:text-amber-600 transition-colors duration-200">
+                    <img src="assests/images/centralparklogo.png" alt="Central Park Logo" class="h-10 w-auto">
+                    <button id="mobile-menu-close" class="text-gray-900 hover:text-blue-600 transition-colors duration-200">
                         <i class="fas fa-times text-xl"></i>
                     </button>
                 </div>
 
                 <!-- Mobile menu items -->
                 <div class="flex-1 px-6 py-8 space-y-6">
-                    <a href="#home" class="block text-gray-900 hover:text-amber-600 text-lg font-medium transition-colors duration-200">Home</a>
-                    <a href="#about" class="block text-gray-900 hover:text-amber-600 text-lg font-medium transition-colors duration-200">About</a>
-                    <a href="#overview" class="block text-gray-900 hover:text-amber-600 text-lg font-medium transition-colors duration-200">Overview</a>
-                    <a href="#amenities" class="block text-gray-900 hover:text-amber-600 text-lg font-medium transition-colors duration-200">Amenities</a>
-                    <a href="#contact" class="block text-gray-900 hover:text-amber-600 text-lg font-medium transition-colors duration-200">Download Brochure</a>
+                    <a href="#home" class="block text-gray-900 hover:text-blue-600 text-lg font-medium transition-colors duration-200">Home</a>
+                    <a href="#about" class="block text-gray-900 hover:text-blue-600 text-lg font-medium transition-colors duration-200">About</a>
+                    <a href="#overview" class="block text-gray-900 hover:text-blue-600 text-lg font-medium transition-colors duration-200">Overview</a>
+                    <a href="#amenities" class="block text-gray-900 hover:text-blue-600 text-lg font-medium transition-colors duration-200">Amenities</a>
+                    <a href="#contact" class="block text-gray-900 hover:text-blue-600 text-lg font-medium transition-colors duration-200">Download Brochure</a>
                 </div>
             </div>
         </div>
@@ -106,7 +208,7 @@
                 <div class="space-y-8">
                     <!-- Header -->
                     <div class="text-center lg:text-left">
-                        <p class="text-orange-500 font-medium text-lg mb-2 italic">First Residential Glass Façade Towers</p>
+                        <p class="text-blue-500 font-medium text-lg mb-2 italic">First Residential Glass Façade Towers</p>
                         <h1 class="text-5xl lg:text-6xl font-black text-gray-900 mb-4 leading-tight">
                             Central <span class="text-gray-800">Park</span>
                         </h1>
@@ -114,7 +216,7 @@
                         
                         <div class="space-y-2">
                             <p class="text-xl text-gray-700">
-                                <span class="text-orange-500 font-bold">1 BHK</span> & STUDIO APARTMENT Starting at
+                                <span class="text-blue-500 font-bold">1 BHK</span> & STUDIO APARTMENT Starting at
                             </p>
                             <p class="text-4xl font-bold text-gray-900">₹30,000*  <span class="text-gray-500 text-lg">Per Sq. ft.</span>  </p>
                         </div>
@@ -135,7 +237,7 @@
                         <div class="inline-block">
                             <div class="border-2 border-gray-800 rounded-lg px-6 py-3 bg-white">
                                 <p class="text-lg font-medium text-gray-800">
-                                    Easy <span class="text-orange-500 font-bold">30:30:40</span> Payment Plan
+                                    Easy <span class="text-blue-500 font-bold">30:30:40</span> Payment Plan
                                 </p>
                             </div>
                         </div>
@@ -144,7 +246,7 @@
                         <div class="inline-block">
                             <div class="border-2 border-gray-800 rounded-lg px-6 py-4 bg-white">
                                 <p class="text-lg font-medium text-gray-800">
-                                    Pay Now 30% & No Payments <span class="text-orange-500 font-bold">Till 3.5 Years</span>
+                                    Pay Now 30% & No Payments <span class="text-blue-500 font-bold">Till 3.5 Years</span>
                                 </p>
                             </div>
                         </div>
@@ -165,9 +267,10 @@
                 <div class="relative">
                     <div class="relative overflow-hidden rounded-2xl shadow-2xl">
                         <img 
-                            src="assests/images/img1.jpeg" 
+                            src="assests/images/g7.webp" 
                             alt="Central Park - Luxury Residential Building" 
-                            class="w-full h-auto object-cover"
+                            class="w-full object-cover"
+                            style="height: 500px;"
                         >
                         <!-- Image Overlay for better text readability if needed -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-30"></div>
@@ -190,12 +293,15 @@
                 <!-- Left Content -->
                 <div class="order-2 lg:order-1">
                     <div class="mb-8">
-                        <h2 class="text-orange-500 text-lg font-medium mb-3 tracking-wide">DISCOVER LUXURY LIVING</h2>
-                        <h1 class="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
-                            Central Park Sector 104<br>
-                            <span class="text-orange-500">Dwarka Expressway</span>
-                        </h1>
-                        <div class="w-24 h-1 bg-orange-500 mb-8"></div>
+                        <h2 class="text-blue-500 text-lg font-medium mb-3 tracking-wide">DISCOVER LUXURY LIVING</h2>
+                        <div class="mb-6">
+                            <img src="assests/images/centralparklogo.png" alt="Central Park" class="h-16 lg:h-20 w-auto mb-4">
+                            <h1 class="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
+                                Sector 104<br>
+                                <span class="text-blue-500">Dwarka Expressway</span>
+                            </h1>
+                        </div>
+                        <div class="w-24 h-1 bg-blue-500 mb-8"></div>
                     </div>
 
                     <div class="space-y-6 text-gray-700 leading-relaxed">
@@ -212,7 +318,7 @@
                             with meticulous attention to detail, featuring premium finishes and modern amenities.
                         </p>
 
-                        <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-orange-500">
+                        <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-blue-500">
                             <p class="text-lg font-medium text-gray-800">
                                 Life at Central Park Sector 104 is about unmatched comfort and indulgence, with access to a wide range of 
                                 world-class amenities. From a grand clubhouse, infinity-edge pool, spa and wellness centre, and fine-dining 
@@ -238,7 +344,7 @@
 
                     <!-- CTA Button -->
                     <div class="mt-10">
-                        <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        <button class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                             <a href="#contact">DOWNLOAD BROCHURE</a>
                         </button>
                     </div>
@@ -261,20 +367,20 @@
                         <!-- Floating Stats Cards -->
                         <div class="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
                             <div class="text-center">
-                                <div class="text-3xl font-black text-orange-500 mb-1">12.5</div>
+                                <div class="text-3xl font-black text-blue-500 mb-1">12.5</div>
                                 <div class="text-sm font-semibold text-gray-600">ACRES</div>
                             </div>
                         </div>
                         
                         <div class="absolute -top-8 -right-8 bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
                             <div class="text-center">
-                                <div class="text-3xl font-black text-orange-500 mb-1">850+</div>
+                                <div class="text-3xl font-black text-blue-500 mb-1">850+</div>
                                 <div class="text-sm font-semibold text-gray-600">UNITS</div>
                             </div>
                         </div>
 
                         <!-- Luxury Badge -->
-                        <div class="absolute top-6 left-6 bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                        <div class="absolute top-6 left-6 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                             Ultra-Luxury Living
                         </div>
                     </div>
@@ -287,8 +393,8 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Feature 1 -->
                     <div class="text-center group">
-                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors duration-300">
-                            <i class="fas fa-building text-2xl text-orange-500 group-hover:text-white transition-colors duration-300"></i>
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500 transition-colors duration-300">
+                            <i class="fas fa-building text-2xl text-blue-500 group-hover:text-white transition-colors duration-300"></i>
                         </div>
                         <h4 class="text-lg font-bold text-gray-900 mb-2">Premium Location</h4>
                         <p class="text-gray-600">Strategically located on Dwarka Expressway with excellent connectivity</p>
@@ -296,8 +402,8 @@
 
                     <!-- Feature 2 -->
                     <div class="text-center group">
-                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors duration-300">
-                            <i class="fas fa-swimming-pool text-2xl text-orange-500 group-hover:text-white transition-colors duration-300"></i>
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500 transition-colors duration-300">
+                            <i class="fas fa-swimming-pool text-2xl text-blue-500 group-hover:text-white transition-colors duration-300"></i>
                         </div>
                         <h4 class="text-lg font-bold text-gray-900 mb-2">World-Class Amenities</h4>
                         <p class="text-gray-600">Infinity pool, clubhouse, spa, fitness center and premium facilities</p>
@@ -305,8 +411,8 @@
 
                     <!-- Feature 3 -->
                     <div class="text-center group">
-                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors duration-300">
-                            <i class="fas fa-shield-alt text-2xl text-orange-500 group-hover:text-white transition-colors duration-300"></i>
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500 transition-colors duration-300">
+                            <i class="fas fa-shield-alt text-2xl text-blue-500 group-hover:text-white transition-colors duration-300"></i>
                         </div>
                         <h4 class="text-lg font-bold text-gray-900 mb-2">Secure Community</h4>
                         <p class="text-gray-600">Gated community with 24/7 security and smart home features</p>
@@ -314,8 +420,8 @@
 
                     <!-- Feature 4 -->
                     <div class="text-center group">
-                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors duration-300">
-                            <i class="fas fa-chart-line text-2xl text-orange-500 group-hover:text-white transition-colors duration-300"></i>
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500 transition-colors duration-300">
+                            <i class="fas fa-chart-line text-2xl text-blue-500 group-hover:text-white transition-colors duration-300"></i>
                         </div>
                         <h4 class="text-lg font-bold text-gray-900 mb-2">Great Investment</h4>
                         <p class="text-gray-600">High appreciation potential in NCR's fastest growing corridor</p>
@@ -568,12 +674,12 @@
     </section>
 
         <!-- Amenities Section -->
-    <section id="amenities" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 to-amber-50">
+    <section id="amenities" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div class="max-w-7xl mx-auto">
             <!-- Section Header -->
             <div class="text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-4">Amenities</h2>
-                <div class="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Experience luxury living with world-class amenities designed to elevate your lifestyle
                 </p>
@@ -585,7 +691,7 @@
                 <div class="lg:col-span-2">
                     <div class="relative group overflow-hidden rounded-3xl shadow-2xl h-80 bg-gradient-to-br from-blue-600 to-blue-800">
                         <img 
-                            src="assests/images/img3.jpg" 
+                            src="assests/images/img8.jpg" 
                             alt="Infinity Pool - Luxury Swimming Experience" 
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         >
@@ -604,7 +710,7 @@
                 <div>
                     <div class="relative group overflow-hidden rounded-3xl shadow-2xl h-80 bg-gradient-to-br from-green-600 to-emerald-800">
                         <img 
-                            src="assests/images/img4.jpg" 
+                            src="assests/images/img9.jpeg" 
                             alt="Wellness & Fitness Center" 
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         >
@@ -625,7 +731,7 @@
                 <!-- Clubhouse -->
                 <div class="relative group overflow-hidden rounded-2xl shadow-xl h-64 bg-gradient-to-br from-purple-600 to-indigo-800">
                     <img 
-                        src="assests/images/img5.jpg" 
+                        src="assests/images/img10.jpeg" 
                         alt="Premium Clubhouse" 
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     >
@@ -642,7 +748,7 @@
                 <!-- Gardens -->
                 <div class="relative group overflow-hidden rounded-2xl shadow-xl h-64 bg-gradient-to-br from-green-500 to-teal-700">
                     <img 
-                        src="assests/images/img6.jpg" 
+                        src="assests/images/img11.jpg" 
                         alt="Landscaped Gardens" 
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     >
@@ -657,9 +763,9 @@
                 </div>
 
                 <!-- Smart Living -->
-                <div class="relative group overflow-hidden rounded-2xl shadow-xl h-64 bg-gradient-to-br from-orange-500 to-red-600">
+                <div class="relative group overflow-hidden rounded-2xl shadow-xl h-64 bg-gradient-to-br from-blue-500 to-indigo-600">
                     <img 
-                        src="assests/images/img7.jpg" 
+                        src="assests/images/img12.jpg" 
                         alt="Smart Home Automation" 
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     >
@@ -680,8 +786,8 @@
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                     <!-- Row 1 -->
                     <div class="text-center group">
-                        <div class="w-20 h-20 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 group-hover:scale-110 transition-all duration-300">
-                            <i class="fas fa-building text-3xl text-orange-500 group-hover:text-white transition-colors duration-300"></i>
+                        <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-building text-3xl text-blue-500 group-hover:text-white transition-colors duration-300"></i>
                         </div>
                         <h4 class="font-bold text-gray-900 mb-1">Timeless Architecture</h4>
                         <p class="text-sm text-gray-600">Modern glass façade design</p>
@@ -737,8 +843,8 @@
                     </div>
 
                     <div class="text-center group">
-                        <div class="w-20 h-20 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-500 group-hover:scale-110 transition-all duration-300">
-                            <i class="fas fa-concierge-bell text-3xl text-amber-500 group-hover:text-white transition-colors duration-300"></i>
+                        <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-concierge-bell text-3xl text-blue-500 group-hover:text-white transition-colors duration-300"></i>
                         </div>
                         <h4 class="font-bold text-gray-900 mb-1">Concierge Services</h4>
                         <p class="text-sm text-gray-600">Premium lifestyle support</p>
@@ -768,7 +874,7 @@
                 <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
                     Discover a lifestyle where every amenity is designed to enhance your daily living experience
                 </p>
-                <button class="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                     <a href="#contact">Schedule a Visit</a>
                 </button>
             </div>
@@ -781,7 +887,7 @@
             <!-- Section Header -->
             <div class="text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-4">Get In Touch</h2>
-                <div class="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Ready to experience luxury living? Fill out the form below and our team will get back to you.
                 </p>
@@ -802,7 +908,7 @@
                                 Are you interested in Central Park?
                             </label>
                             <select id="interest" name="interest" required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200">
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
                                 <option value="">Select your interest level</option>
                                 <option value="Yes - Very Interested">Yes - Very Interested</option>
                                 <option value="Yes - Moderately Interested">Yes - Moderately Interested</option>
@@ -817,7 +923,7 @@
                                 What type of apartment are you looking for?
                             </label>
                             <select id="apartment_type" name="apartment_type" required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200">
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
                                 <option value="">Select apartment type</option>
                                 <option value="Studio - 320-380 Sq.ft">Studio - 320-380 Sq.ft</option>
                                 <option value="1 BHK - 450-520 Sq.ft">1 BHK - 450-520 Sq.ft</option>
@@ -831,7 +937,7 @@
                                 When are you planning to visit the location?
                             </label>
                             <select id="visit_time" name="visit_time" required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200">
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
                                 <option value="">Select visit timeline</option>
                                 <option value="This Week">This Week</option>
                                 <option value="Next Week">Next Week</option>
@@ -849,7 +955,7 @@
                             </label>
                             <input type="text" id="name" name="name" required 
                                    placeholder="Enter your full name"
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200">
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
                         </div>
 
                         <!-- Phone -->
@@ -859,7 +965,7 @@
                             </label>
                             <input type="tel" id="phone" name="phone" required 
                                    placeholder="Enter your phone number"
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200">
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
                         </div>
 
                         <!-- Email -->
@@ -869,7 +975,7 @@
                             </label>
                             <input type="email" id="email" name="email" required 
                                    placeholder="Enter your email address"
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200">
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
                         </div>
 
                         <!-- Additional Message -->
@@ -879,7 +985,7 @@
                             </label>
                             <textarea id="message" name="message" rows="4" 
                                       placeholder="Any specific questions or requirements?"
-                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 resize-none"></textarea>
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-none"></textarea>
                         </div>
 
                         <!-- Hidden fields for Web3Forms -->
@@ -898,7 +1004,7 @@
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="text-center md:text-left">
                                 <h4 class="font-semibold text-gray-900 mb-2">Call Us</h4>
-                                <a href="tel:+917982045917" class="text-orange-500 hover:text-orange-600 font-medium">
+                                <a href="tel:+917982045917" class="text-blue-500 hover:text-blue-600 font-medium">
                                     +91 7982045917
                                 </a>
                             </div>
@@ -928,7 +1034,7 @@
                         <div class="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg max-w-xs">
                             <h4 class="font-bold text-gray-900 mb-2">Central Park</h4>
                             <p class="text-sm text-gray-600 mb-3">Dwarka Expressway, Sector 104, Gurugram</p>
-                            <div class="flex items-center text-orange-500">
+                            <div class="flex items-center text-blue-500">
                                 <i class="fas fa-map-marker-alt mr-2"></i>
                                 <span class="text-sm font-medium">Prime Location</span>
                             </div>
@@ -940,8 +1046,8 @@
             <!-- Additional Contact Information -->
             <div class="mt-16 grid md:grid-cols-3 gap-8">
                 <div class="text-center group">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors duration-300">
-                        <i class="fas fa-clock text-2xl text-orange-500 group-hover:text-white transition-colors duration-300"></i>
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500 transition-colors duration-300">
+                        <i class="fas fa-clock text-2xl text-blue-500 group-hover:text-white transition-colors duration-300"></i>
                     </div>
                     <h4 class="text-lg font-bold text-gray-900 mb-2">Office Hours</h4>
                     <p class="text-gray-600">Mon - Sat: 9:00 AM - 7:00 PM<br>Sun: 10:00 AM - 6:00 PM</p>
@@ -984,18 +1090,18 @@
                     <!-- Contact Info -->
                     <div class="space-y-3">
                         <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-orange-500 w-5 mr-3"></i>
+                            <i class="fas fa-map-marker-alt text-blue-500 w-5 mr-3"></i>
                             <span class="text-gray-300">Dwarka Expressway, Sector 104, Gurugram</span>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-phone text-orange-500 w-5 mr-3"></i>
-                            <a href="tel:+917982045917" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">
+                            <i class="fas fa-phone text-blue-500 w-5 mr-3"></i>
+                            <a href="tel:+917982045917" class="text-gray-300 hover:text-blue-500 transition-colors duration-200">
                                 +91 7982045917
                             </a>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-envelope text-orange-500 w-5 mr-3"></i>
-                            <a href="mailto:info@centralpark.com" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">
+                            <i class="fas fa-envelope text-blue-500 w-5 mr-3"></i>
+                            <a href="mailto:info@centralpark.com" class="text-gray-300 hover:text-blue-500 transition-colors duration-200">
                                 info@centralpark.com
                             </a>
                         </div>
@@ -1006,11 +1112,11 @@
                 <div>
                     <h3 class="text-lg font-bold text-white mb-6">Quick Links</h3>
                     <ul class="space-y-3">
-                        <li><a href="#home" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">Home</a></li>
-                        <li><a href="#about" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">About</a></li>
-                        <li><a href="#overview" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">Overview</a></li>
-                        <li><a href="#amenities" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">Amenities</a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-orange-500 transition-colors duration-200">Contact Us</a></li>
+                        <li><a href="#home" class="text-gray-300 hover:text-blue-500 transition-colors duration-200">Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-blue-500 transition-colors duration-200">About</a></li>
+                        <li><a href="#overview" class="text-gray-300 hover:text-blue-500 transition-colors duration-200">Overview</a></li>
+                        <li><a href="#amenities" class="text-gray-300 hover:text-blue-500 transition-colors duration-200">Amenities</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-blue-500 transition-colors duration-200">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -1019,16 +1125,16 @@
                     <h3 class="text-lg font-bold text-white mb-6">Apartment Types</h3>
                     <ul class="space-y-3">
                         <li class="text-gray-300">
-                            <span class="font-semibold text-orange-500">Studio:</span> 320-380 sq.ft
+                            <span class="font-semibold text-blue-500">Studio:</span> 320-380 sq.ft
                         </li>
                         <li class="text-gray-300">
-                            <span class="font-semibold text-orange-500">1 BHK:</span> 450-520 sq.ft
+                            <span class="font-semibold text-blue-500">1 BHK:</span> 450-520 sq.ft
                         </li>
                         <li class="text-gray-300">
-                            <span class="font-semibold text-orange-500">Starting:</span> ₹30,000/sq.ft
+                            <span class="font-semibold text-blue-500">Starting:</span> ₹30,000/sq.ft
                         </li>
                         <li class="text-gray-300">
-                            <span class="font-semibold text-orange-500">Possession:</span> Dec 2028
+                            <span class="font-semibold text-blue-500">Possession:</span> Dec 2028
                         </li>
                     </ul>
                 </div>
@@ -1039,28 +1145,28 @@
                 <h3 class="text-lg font-bold text-white mb-6 text-center">Why Choose Central Park?</h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="text-center">
-                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
                             <i class="fas fa-building text-white"></i>
                         </div>
                         <h4 class="font-semibold text-white mb-1">Glass Façade Towers</h4>
                         <p class="text-gray-400 text-sm">Modern architecture</p>
                     </div>
                     <div class="text-center">
-                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
                             <i class="fas fa-swimming-pool text-white"></i>
                         </div>
                         <h4 class="font-semibold text-white mb-1">Infinity Pool</h4>
                         <p class="text-gray-400 text-sm">Rooftop luxury</p>
                     </div>
                     <div class="text-center">
-                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
                             <i class="fas fa-shield-alt text-white"></i>
                         </div>
                         <h4 class="font-semibold text-white mb-1">24/7 Security</h4>
                         <p class="text-gray-400 text-sm">Safe & secure</p>
                     </div>
                     <div class="text-center">
-                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
                             <i class="fas fa-road text-white"></i>
                         </div>
                         <h4 class="font-semibold text-white mb-1">Prime Location</h4>
@@ -1076,19 +1182,19 @@
                     <div class="mb-6 md:mb-0">
                         <h4 class="font-semibold text-white mb-3">Follow Us</h4>
                         <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300">
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors duration-300">
                                 <i class="fab fa-facebook-f text-white"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300">
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors duration-300">
                                 <i class="fab fa-instagram text-white"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300">
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors duration-300">
                                 <i class="fab fa-twitter text-white"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300">
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors duration-300">
                                 <i class="fab fa-youtube text-white"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300">
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors duration-300">
                                 <i class="fab fa-linkedin-in text-white"></i>
                             </a>
                         </div>
@@ -1098,10 +1204,10 @@
                     <div class="text-center md:text-right">
                         <h4 class="font-semibold text-white mb-3">Ready to Invest?</h4>
                         <div class="space-y-2 sm:space-y-0 sm:space-x-4 sm:flex">
-                            <a href="tel:+917982045917" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300">
+                            <a href="tel:+917982045917" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300">
                                 Call Now
                             </a>
-                            <a href="#contact" class="inline-block border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300">
+                            <a href="#contact" class="inline-block border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300">
                                 Book Site Visit
                             </a>
                         </div>
@@ -1118,9 +1224,9 @@
                         © 2024 Central Park. All rights reserved. | RERA: RC/REP/HARERA/GGM/963/695/2025/66
                     </div>
                     <div class="flex space-x-6 text-sm">
-                        <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-200">Privacy Policy</a>
-                        <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-200">Terms & Conditions</a>
-                        <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-200">Disclaimer</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors duration-200">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors duration-200">Terms & Conditions</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors duration-200">Disclaimer</a>
                     </div>
                 </div>
             </div>

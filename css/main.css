@@ -1,17 +1,39 @@
-.logo-text {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 700;
-    font-size: 2rem;
-    letter-spacing: -0.02em;
-}
-
+/* Logo styles - now using image instead of text */
 /* Hide Central Park logo between md (956px) and 1208px */
 @media (min-width: 956px) and (max-width: 1208px) {
-    .logo-text {
+    .flex-shrink-0 img {
         display: none !important;
+    }
+}
+
+/* Popup Modal Styles */
+#popup-modal {
+    display: none; /* Initially hidden */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Popup modal content animation */
+#popup-modal .bg-white {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
