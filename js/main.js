@@ -9,14 +9,14 @@ function openMobileMenu() {
     mobileMenu.classList.add('open');
     mobileMenuOverlay.classList.remove('hidden');
     hamburger.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('menu-open');
 }
 
 function closeMobileMenu() {
     mobileMenu.classList.remove('open');
     mobileMenuOverlay.classList.add('hidden');
     hamburger.classList.remove('open');
-    document.body.style.overflow = 'auto';
+    document.body.classList.remove('menu-open');
 }
 
 mobileMenuButton.addEventListener('click', () => {
