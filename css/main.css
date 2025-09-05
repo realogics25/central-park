@@ -32,6 +32,25 @@ html, body {
     box-sizing: border-box;
 }
 
+/* Additional mobile overflow prevention */
+@media (max-width: 768px) {
+    * {
+        max-width: 100vw !important;
+    }
+    
+    /* Force all containers to stay within viewport */
+    div, section, nav, main, article, aside, header, footer {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    /* Prevent any element from extending beyond screen */
+    img, video, iframe, embed, object {
+        max-width: 100% !important;
+        height: auto;
+    }
+}
+
 /* Fix mobile menu positioning and prevent horizontal scroll */
 .mobile-menu {
     transform: translateX(-100%);
@@ -97,6 +116,68 @@ img {
     iframe {
         max-width: 100%;
         width: 100%;
+    }
+    
+    /* Fix grid layouts that might overflow */
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    /* Override specific grid layouts for mobile */
+    .md\\:grid-cols-2, .lg\\:grid-cols-3, .lg\\:grid-cols-4, .lg\\:grid-cols-5 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Ensure all content cards fit properly */
+    .bg-gray-50, .bg-white {
+        max-width: 100%;
+        overflow: hidden;
+        word-wrap: break-word;
+    }
+    
+    /* Fix long text in cards */
+    .text-sm, .text-lg, .text-xl {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* Ensure RERA text doesn't overflow */
+    .md\\:col-span-2, .lg\\:col-span-1 {
+        grid-column: span 1 !important;
+    }
+    
+    /* Fix tab content and overview section specifically */
+    .tab-content {
+        overflow: hidden;
+    }
+    
+    .tab-content .bg-white {
+        margin: 0;
+        padding: 1rem !important;
+    }
+    
+    /* Ensure tab navigation wraps properly */
+    .flex-wrap {
+        flex-wrap: wrap !important;
+    }
+    
+    /* Fix button spacing in tab navigation */
+    .tab-btn {
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Fix section padding on mobile */
+    .py-16, .py-20 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .px-4, .px-6, .px-8 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
 }
 
