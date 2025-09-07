@@ -19,6 +19,7 @@
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="assests/images/favicon.ico">
 </head>
 <body class="bg-white">
     <!-- Popup Modal -->
@@ -39,7 +40,7 @@
             <div class="p-6">
                 <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
                     <!-- Web3Forms Access Key -->
-                    <input type="hidden" name="access_key" value="ff987f5b-04b4-46ac-9136-0db42b6d9789">
+                    <input type="hidden" name="access_key" value="c13627a6-94dc-410e-96d6-d187227ffa8a">
                     
                     <!-- Interest in Central Park -->
                     <div>
@@ -134,7 +135,7 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <img src="assests/images/centralparklogo.png" alt="Central Park Logo" class="h-12 w-auto">
+                    <img src="assests/images/favicon.ico" alt="Central Park Logo" class="h-12 w-auto">
                 </div>
 
                 <!-- Desktop Navigation -->
@@ -144,7 +145,6 @@
                         <a href="#about" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">About</a>
                         <a href="#overview" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Overview</a>
                         <a href="#amenities" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Amenities</a>
-                        <a href="#contact" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Download Brochure</a>
                     </div>
                 </div>
 
@@ -176,7 +176,7 @@
             <div class="flex flex-col h-full">
                 <!-- Mobile menu header with centered logo and close button -->
                 <div class="flex items-center justify-between p-6 border-b">
-                    <img src="assests/images/centralparklogo.png" alt="Central Park Logo" class="h-10 w-auto">
+                    <img src="assests/images/favicon.ico" alt="Central Park Logo" class="h-10 w-auto">
                     <button id="mobile-menu-close" class="text-gray-900 hover:text-blue-600 transition-colors duration-200">
                         <i class="fas fa-times text-xl"></i>
                     </button>
@@ -188,7 +188,6 @@
                     <a href="#about" class="block text-gray-900 hover:text-blue-600 text-lg font-medium transition-colors duration-200">About</a>
                     <a href="#overview" class="block text-gray-900 hover:text-blue-600 text-lg font-medium transition-colors duration-200">Overview</a>
                     <a href="#amenities" class="block text-gray-900 hover:text-blue-600 text-lg font-medium transition-colors duration-200">Amenities</a>
-                    <a href="#contact" class="block text-gray-900 hover:text-blue-600 text-lg font-medium transition-colors duration-200">Download Brochure</a>
                 </div>
             </div>
         </div>
@@ -255,7 +254,7 @@
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4 pt-6">
                         <button class="bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-colors duration-300 shadow-lg">
-                            <a href="#contact">Download Brochure</a>
+                            <a href="#home">Get In Touch with us</a>
                         </button>
                         <a href="tel:+919999221307" class="bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-colors duration-300 shadow-lg text-center">
                             Call Now : +91 9999221307
@@ -263,22 +262,92 @@
                     </div>
                 </div>
 
-                <!-- Right Image -->
-                <div class="relative">
-                    <div class="relative overflow-hidden rounded-2xl shadow-2xl">
-                        <img 
-                            src="assests/images/g7.webp" 
-                            alt="Central Park - Luxury Residential Building" 
-                            class="w-full object-cover"
-                            style="height: 500px;"
-                        >
-                        <!-- Image Overlay for better text readability if needed -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-30"></div>
-                    </div>
+                <!-- Right Contact Form -->
+                <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Fill this form to Proceed.</h3>
                     
-                    <!-- Floating Badge -->
-                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
-                        <p class="text-sm font-semibold text-gray-800">A Landmark of Luxury Living</p>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="c13627a6-94dc-410e-96d6-d187227ffa8a">
+                        
+                        <!-- Interest in Central Park -->
+                        <div>
+                            <label for="hero-interest" class="block text-sm font-semibold text-gray-700 mb-3">
+                                Are you interested in Central Park?
+                            </label>
+                            <select id="hero-interest" name="interest" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                                <option value="">Select your interest level</option>
+                                <option value="Yes - Very Interested">Yes - Very Interested</option>
+                                <option value="Yes - Moderately Interested">Yes - Moderately Interested</option>
+                                <option value="Maybe - Need More Information">Maybe - Need More Information</option>
+                                <option value="No - Just Browsing">No - Just Browsing</option>
+                            </select>
+                        </div>
+
+                        <!-- Apartment Type -->
+                        <div>
+                            <label for="hero-apartment-type" class="block text-sm font-semibold text-gray-700 mb-3">
+                                What type of apartment are you looking for?
+                            </label>
+                            <select id="hero-apartment-type" name="apartment_type" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                                <option value="">Select apartment type</option>
+                                <option value="Studio - 1000 Sq.ft onwards">Studio - 1000 Sq.ft onwards</option>
+                                <option value="1 BHK - 1300 Sq.ft onwards">1 BHK - 1300 Sq.ft onwards</option>
+                                <option value="Any - Show me options">Any - Show me options</option>
+                            </select>
+                        </div>
+
+                        <!-- Name -->
+                        <div>
+                            <label for="hero-name" class="block text-sm font-semibold text-gray-700 mb-3">
+                                Full Name
+                            </label>
+                            <input type="text" id="hero-name" name="name" required 
+                                   placeholder="Enter your full name"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                        </div>
+
+                        <!-- Phone -->
+                        <div>
+                            <label for="hero-phone" class="block text-sm font-semibold text-gray-700 mb-3">
+                                Phone Number
+                            </label>
+                            <input type="tel" id="hero-phone" name="phone" required 
+                                   placeholder="Enter your phone number"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="hero-email" class="block text-sm font-semibold text-gray-700 mb-3">
+                                Email Address
+                            </label>
+                            <input type="email" id="hero-email" name="email" required 
+                                   placeholder="Enter your email address"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                        </div>
+
+                        <!-- Hidden fields for Web3Forms -->
+                        <input type="hidden" name="subject" value="New Central Park Hero Inquiry">
+                        <input type="hidden" name="from_name" value="Central Park Website Hero">
+
+                        <!-- Submit Button -->
+                        <button type="submit" 
+                                class="w-full bg-black text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Get Detailed Information
+                        </button>
+                    </form>
+
+                    <!-- Contact Info -->
+                    <div class="mt-8 pt-8 border-t border-gray-200">
+                        <div class="text-center">
+                            <p class="text-gray-600 text-sm mb-2">Or call us directly</p>
+                            <a href="tel:+919999221307" class="text-blue-500 hover:text-blue-600 font-medium">
+                                +91 9999221307
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -295,7 +364,7 @@
                     <div class="mb-8">
                         <h2 class="text-blue-500 text-lg font-medium mb-3 tracking-wide">DISCOVER LUXURY LIVING</h2>
                         <div class="mb-6">
-                            <img src="assests/images/centralparklogo.png" alt="Central Park" class="h-16 lg:h-20 w-auto mb-4">
+                            <img src="assests/images/favicon.ico" alt="Central Park" class="h-16 lg:h-20 w-auto mb-4">
                             <h1 class="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
                                 Sector 104<br>
                                 <span class="text-blue-500">Dwarka Expressway</span>
@@ -343,7 +412,7 @@
                     <!-- CTA Button -->
                     <div class="mt-10 flex justify-center">
                         <button class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                            <a href="#contact">DOWNLOAD BROCHURE</a>
+                            <a href="#home">Get In Touch with us</a>
                         </button>
                     </div>
                 </div>
@@ -828,125 +897,28 @@
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 items-start">
-                <!-- Contact Form -->
-                <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Fill this form to Proceed.</h3>
+                <!-- Left Image -->
+                <div class="relative">
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                        <img 
+                            src="assests/images/g7.webp" 
+                            alt="Central Park - Luxury Residential Building" 
+                            class="w-full object-cover"
+                            style="height: 600px;"
+                        >
+                        <!-- Image Overlay for better text readability if needed -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-30"></div>
+                    </div>
                     
-                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-                        <!-- Web3Forms Access Key -->
-                        <input type="hidden" name="access_key" value="ff987f5b-04b4-46ac-9136-0db42b6d9789">
-                        
-                        <!-- Interest in Central Park -->
-                        <div>
-                            <label for="interest" class="block text-sm font-semibold text-gray-700 mb-3">
-                                Are you interested in Central Park?
-                            </label>
-                            <select id="interest" name="interest" required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                                <option value="">Select your interest level</option>
-                                <option value="Yes - Very Interested">Yes - Very Interested</option>
-                                <option value="Yes - Moderately Interested">Yes - Moderately Interested</option>
-                                <option value="Maybe - Need More Information">Maybe - Need More Information</option>
-                                <option value="No - Just Browsing">No - Just Browsing</option>
-                            </select>
-                        </div>
+                    <!-- Floating Badge -->
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
+                        <p class="text-sm font-semibold text-gray-800">A Landmark of Luxury Living</p>
+                    </div>
 
-                        <!-- Apartment Type -->
-                        <div>
-                            <label for="apartment_type" class="block text-sm font-semibold text-gray-700 mb-3">
-                                What type of apartment are you looking for?
-                            </label>
-                            <select id="apartment_type" name="apartment_type" required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                                <option value="">Select apartment type</option>
-                                <option value="Studio - 1000 Sq.ft onwards">Studio - 1000 Sq.ft onwards</option>
-                                <option value="1 BHK - 1300 Sq.ft onwards">1 BHK - 1300 Sq.ft onwards</option>
-                                <option value="Any - Show me options">Any - Show me options</option>
-                            </select>
-                        </div>
-
-                        <!-- Visit Planning -->
-                        <div>
-                            <label for="visit_time" class="block text-sm font-semibold text-gray-700 mb-3">
-                                When are you planning to visit the location?
-                            </label>
-                            <select id="visit_time" name="visit_time" required 
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                                <option value="">Select visit timeline</option>
-                                <option value="This Week">This Week</option>
-                                <option value="Next Week">Next Week</option>
-                                <option value="This Month">This Month</option>
-                                <option value="Next Month">Next Month</option>
-                                <option value="Within 3 Months">Within 3 Months</option>
-                                <option value="Just Exploring">Just Exploring</option>
-                            </select>
-                        </div>
-
-                        <!-- Name -->
-                        <div>
-                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-3">
-                                Full Name
-                            </label>
-                            <input type="text" id="name" name="name" required 
-                                   placeholder="Enter your full name"
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                        </div>
-
-                        <!-- Phone -->
-                        <div>
-                            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-3">
-                                Phone Number
-                            </label>
-                            <input type="tel" id="phone" name="phone" required 
-                                   placeholder="Enter your phone number"
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                        </div>
-
-                        <!-- Email -->
-                        <div>
-                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-3">
-                                Email Address
-                            </label>
-                            <input type="email" id="email" name="email" required 
-                                   placeholder="Enter your email address"
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
-                        </div>
-
-                        <!-- Additional Message -->
-                        <div>
-                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-3">
-                                Additional Message (Optional)
-                            </label>
-                            <textarea id="message" name="message" rows="4" 
-                                      placeholder="Any specific questions or requirements?"
-                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-none"></textarea>
-                        </div>
-
-                        <!-- Hidden fields for Web3Forms -->
-                        <input type="hidden" name="subject" value="New Central Park Inquiry">
-                        <input type="hidden" name="from_name" value="Central Park Website">
-
-                        <!-- Submit Button -->
-                        <button type="submit" 
-                                class="w-full bg-black text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                            Submit
-                        </button>
-                    </form>
-
-                    <!-- Contact Info -->
-                    <div class="mt-8 pt-8 border-t border-gray-200">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="text-center md:text-left">
-                                <h4 class="font-semibold text-gray-900 mb-2">Call Us</h4>
-                                <a href="tel:+919999221307" class="text-blue-500 hover:text-blue-600 font-medium">
-                                    +91 9999221307
-                                </a>
-                            </div>
-                            <div class="text-center md:text-left">
-                                <h4 class="font-semibold text-gray-900 mb-2">Location</h4>
-                                <p class="text-gray-600 text-sm">Dwarka Expressway, Gurugram</p>
-                            </div>
-                        </div>
+                    <!-- Additional floating info cards -->
+                    <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm rounded-lg px-4 py-3 shadow-lg">
+                        <h4 class="font-bold text-gray-900 mb-1">Central Park</h4>
+                        <p class="text-sm text-gray-600">Dwarka Expressway, Gurugram</p>
                     </div>
                 </div>
 
@@ -1015,7 +987,7 @@
                 <div class="lg:col-span-2">
                     <div class="mb-6">
                         <div class="logo-text text-3xl mb-4">
-                            <img src="assests/images/centralparklogo.png" alt="Central Park" class="w-10 h-10">
+                            <img src="assests/images/favicon.ico" alt="Central Park" class="w-10 h-10">
                         </div>
                         <p class="text-gray-300 text-lg leading-relaxed max-w-md">
                             Experience luxury living in the heart of Dwarka Expressway. A Landmark of Luxury Living 
@@ -1128,7 +1100,7 @@
                             <a href="tel:+919999221307" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300">
                                 Call Now
                             </a>
-                            <a href="#contact" class="inline-block border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300">
+                            <a href="#home" class="inline-block border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300">
                                 Book Site Visit
                             </a>
                         </div>
