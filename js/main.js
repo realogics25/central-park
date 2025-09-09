@@ -39,11 +39,88 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Close popup when form is submitted
-const popupForm = popupModal.querySelector('form');
-popupForm.addEventListener('submit', () => {
-    setTimeout(closePopup, 1000); // Close after 1 second to allow form submission
-});
+// Thank You Popup functionality
+function createThankYouPopup() {
+    const thankYouPopup = document.createElement('div');
+    thankYouPopup.id = 'thank-you-popup';
+    thankYouPopup.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4';
+    thankYouPopup.innerHTML = `
+        <div class="bg-white rounded-3xl shadow-xl max-w-md w-full p-8 text-center transform scale-0 transition-transform duration-300">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-2xl text-green-500"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Thank You!</h3>
+            <p class="text-gray-600 mb-6">Your form has been submitted successfully. Our team will contact you soon.</p>
+            <button id="thank-you-close" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
+                Close
+            </button>
+        </div>
+    `;
+    document.body.appendChild(thankYouPopup);
+    
+    // Animate in
+    setTimeout(() => {
+        thankYouPopup.querySelector('div').style.transform = 'scale(1)';
+    }, 10);
+    
+    // Close button functionality
+    const closeBtn = thankYouPopup.querySelector('#thank-you-close');
+    closeBtn.addEventListener('click', () => {
+        thankYouPopup.querySelector('div').style.transform = 'scale(0)';
+        setTimeout(() => {
+            document.body.removeChild(thankYouPopup);
+            document.body.style.overflow = 'auto';
+        }, 300);
+    });
+    
+    // Close on outside click
+    thankYouPopup.addEventListener('click', (e) => {
+        if (e.target === thankYouPopup) {
+            closeBtn.click();
+        }
+    });
+    
+    // Auto close after 5 seconds
+    setTimeout(() => {
+        if (document.getElementById('thank-you-popup')) {
+            closeBtn.click();
+        }
+    }, 5000);
+    
+    document.body.style.overflow = 'hidden';
+}
+
+// Form submission handler
+function handleFormSubmission(form) {
+    const formData = new FormData(form);
+    
+    // Submit to Web3Forms
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Close the initial popup if it's open
+            if (popupModal.style.display === 'flex') {
+                closePopup();
+            }
+            
+            // Show thank you popup
+            createThankYouPopup();
+            
+            // Reset form
+            form.reset();
+        } else {
+            alert('There was an error submitting the form. Please try again.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error submitting the form. Please try again.');
+    });
+}
 
 // Mobile menu functionality
 const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -140,6 +217,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     showTab('project');
+    
+    // Handle form submissions
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            handleFormSubmission(this);
+        });
+    });
 });
 
 // Initialize popup on page load
