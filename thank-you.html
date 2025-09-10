@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank You - Central Park Gurugram">
+    <title>Thank You - Central Park Gurugram</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'md': '956px',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-float-delayed {
+            animation: float 3s ease-in-out infinite;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .success-checkmark {
+            animation: checkmark 0.6s ease-in-out;
+        }
+        
+        @keyframes checkmark {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html">
+                        <img src="assests/images/centralparklogo.png" alt="Central Park Logo" class="h-12 w-auto">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html#home" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Home</a>
+                        <a href="index.html#about" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">About</a>
+                        <a href="index.html#overview" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Overview</a>
+                        <a href="index.html#amenities" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Amenities</a>
+                        <a href="index.html#contact" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-lg font-bold transition-colors duration-200">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Contact Button -->
+                <div class="hidden md:block">
+                    <a href="tel:+919999221307" class="inline-flex items-center px-4 py-2 border border-gray-900 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-200 rounded">
+                        <i class="fas fa-phone mr-2"></i>
+                        9999221307
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                        <span class="sr-only">Open main menu</span>
+                        <div class="w-6 h-6 flex flex-col justify-center items-center">
+                            <div class="w-5 h-0.5 bg-current mb-1 transition-all duration-300"></div>
+                            <div class="w-5 h-0.5 bg-current mb-1 transition-all duration-300"></div>
+                            <div class="w-5 h-0.5 bg-current transition-all duration-300"></div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Thank You Section -->
+    <main class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- Success Animation Container -->
+            <div class="relative mb-12">
+                <!-- Floating Elements -->
+                <div class="absolute -top-8 -left-8 w-16 h-16 bg-blue-200/30 rounded-full animate-float"></div>
+                <div class="absolute -top-4 -right-12 w-12 h-12 bg-green-200/30 rounded-full animate-float-delayed"></div>
+                <div class="absolute -bottom-6 left-12 w-10 h-10 bg-purple-200/30 rounded-full animate-float"></div>
+                
+                <!-- Main Success Icon -->
+                <div class="relative inline-block">
+                    <div class="w-32 h-32 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl success-checkmark">
+                        <i class="fas fa-check text-5xl text-white"></i>
+                    </div>
+                    <!-- Success Ring -->
+                    <div class="absolute inset-0 w-32 h-32 border-4 border-green-300/50 rounded-full animate-ping mx-auto"></div>
+                </div>
+            </div>
+
+            <!-- Thank You Message -->
+            <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 mb-8">
+                <h1 class="text-4xl lg:text-6xl font-black text-gray-900 mb-6">
+                    Thank You!
+                </h1>
+                
+                <div class="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
+                
+                <p class="text-xl lg:text-2xl text-gray-700 mb-6 leading-relaxed">
+                    Your inquiry has been submitted successfully!
+                </p>
+                
+                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Our Central Park team will contact you within <strong class="text-blue-600">24 hours</strong> 
+                    to discuss your luxury living requirements and schedule a site visit.
+                </p>
+
+                <!-- What Happens Next -->
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">What Happens Next?</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-phone text-2xl text-white"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-2">1. We'll Call You</h3>
+                            <p class="text-gray-600 text-sm">Our expert will contact you to understand your requirements</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-calendar-alt text-2xl text-white"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-2">2. Schedule Visit</h3>
+                            <p class="text-gray-600 text-sm">Book a convenient time for your site tour</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-home text-2xl text-white"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 mb-2">3. Find Your Home</h3>
+                            <p class="text-gray-600 text-sm">Discover your perfect luxury apartment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="bg-gray-50 rounded-2xl p-6 mb-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Need Immediate Assistance?</h3>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="tel:+919999221307" 
+                           class="inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-phone mr-2"></i>
+                            Call +91 9999221307
+                        </a>
+                        <a href="https://wa.me/919999221307" target="_blank"
+                           class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Highlights -->
+            <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Why Central Park?</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-building text-2xl text-blue-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Premium Location</h4>
+                        <p class="text-gray-600 text-sm">Dwarka Expressway, Sector 104</p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-swimming-pool text-2xl text-green-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Luxury Amenities</h4>
+                        <p class="text-gray-600 text-sm">Infinity pool, spa, clubhouse</p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-home text-2xl text-purple-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Smart Homes</h4>
+                        <p class="text-gray-600 text-sm">IoT enabled residences</p>
+                    </div>
+
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-indigo-500 group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-chart-line text-2xl text-indigo-500 group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Great Investment</h4>
+                        <p class="text-gray-600 text-sm">High appreciation potential</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media & Additional Actions -->
+            <div class="bg-white rounded-3xl shadow-2xl p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Stay Connected</h3>
+                
+                <!-- Social Media Links -->
+                <div class="flex justify-center space-x-4 mb-6">
+                    <a href="https://www.facebook.com/share/1FWQ9RQ7vw/" target="_blank" 
+                       class="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-facebook-f text-white text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/realogics?igsh=ZnpxMGp4bmZkZ2xt" target="_blank" 
+                       class="w-12 h-12 bg-pink-600 hover:bg-pink-700 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-instagram text-white text-xl"></i>
+                    </a>
+                    <a href="https://youtube.com/@realogics?si=bK_X8MFl17xE2dfs" target="_blank" 
+                       class="w-12 h-12 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-youtube text-white text-xl"></i>
+                    </a>
+                </div>
+
+                <!-- Additional Actions -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="index.html" 
+                       class="inline-flex items-center bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to Home
+                    </a>
+                    <a href="index.html#amenities" 
+                       class="inline-flex items-center border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                        <i class="fas fa-eye mr-2"></i>
+                        View Amenities
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <h4 class="font-bold text-lg mb-3">Contact Us</h4>
+                    <p class="text-gray-300">+91 9999221307</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-3">Location</h4>
+                    <p class="text-gray-300">Dwarka Expressway, Sector 104, Gurugram</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-3">Starting Price</h4>
+                    <p class="text-gray-300">₹30,000 per sq.ft</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">© 2024 Central Park. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Analytics Tracking Code (Add your tracking codes here) -->
+    <script>
+        // Google Analytics or other tracking codes
+        // Example: gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL'});
+        
+        // Facebook Pixel conversion tracking
+        // Example: fbq('track', 'Lead');
+        
+        // Add any other conversion tracking codes here
+    </script>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function() {
+                // Add mobile menu functionality if needed
+            });
+        }
+
+        // Auto-redirect after 30 seconds (optional)
+        // setTimeout(() => {
+        //     window.location.href = 'index.html';
+        // }, 30000);
+    </script>
+</body>
+</html>

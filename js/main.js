@@ -23,76 +23,35 @@ function closePopup() {
 }
 
 // Close popup when clicking the close button
-closePopupButton.addEventListener('click', closePopup);
+if (closePopupButton) {
+    closePopupButton.addEventListener('click', closePopup);
+}
 
 // Close popup when clicking outside the modal
-popupModal.addEventListener('click', (e) => {
-    if (e.target === popupModal) {
-        closePopup();
-    }
-});
+if (popupModal) {
+    popupModal.addEventListener('click', (e) => {
+        if (e.target === popupModal) {
+            closePopup();
+        }
+    });
+}
 
 // Close popup on escape key
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && popupModal.style.display === 'flex') {
+    if (e.key === 'Escape' && popupModal && popupModal.style.display === 'flex') {
         closePopup();
     }
 });
 
-// Thank You Popup functionality
-function createThankYouPopup() {
-    const thankYouPopup = document.createElement('div');
-    thankYouPopup.id = 'thank-you-popup';
-    thankYouPopup.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4';
-    thankYouPopup.innerHTML = `
-        <div class="bg-white rounded-3xl shadow-xl max-w-md w-full p-8 text-center transform scale-0 transition-transform duration-300">
-            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i class="fas fa-check text-2xl text-green-500"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Thank You!</h3>
-            <p class="text-gray-600 mb-6">Your form has been submitted successfully. Our team will contact you soon.</p>
-            <button id="thank-you-close" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
-                Close
-            </button>
-        </div>
-    `;
-    document.body.appendChild(thankYouPopup);
-    
-    // Animate in
-    setTimeout(() => {
-        thankYouPopup.querySelector('div').style.transform = 'scale(1)';
-    }, 10);
-    
-    // Close button functionality
-    const closeBtn = thankYouPopup.querySelector('#thank-you-close');
-    closeBtn.addEventListener('click', () => {
-        thankYouPopup.querySelector('div').style.transform = 'scale(0)';
-        setTimeout(() => {
-            document.body.removeChild(thankYouPopup);
-            document.body.style.overflow = 'auto';
-        }, 300);
-    });
-    
-    // Close on outside click
-    thankYouPopup.addEventListener('click', (e) => {
-        if (e.target === thankYouPopup) {
-            closeBtn.click();
-        }
-    });
-    
-    // Auto close after 5 seconds
-    setTimeout(() => {
-        if (document.getElementById('thank-you-popup')) {
-            closeBtn.click();
-        }
-    }, 5000);
-    
-    document.body.style.overflow = 'hidden';
-}
-
-// Form submission handler
+// Form submission handler - Updated to redirect to thank you page
 function handleFormSubmission(form) {
     const formData = new FormData(form);
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    
+    // Show loading state
+    submitButton.textContent = 'Submitting...';
+    submitButton.disabled = true;
     
     // Submit to Web3Forms
     fetch('https://api.web3forms.com/submit', {
@@ -102,22 +61,24 @@ function handleFormSubmission(form) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            // Close the initial popup if it's open
-            if (popupModal.style.display === 'flex') {
-                closePopup();
-            }
+            // Store submission success in sessionStorage for thank you page
+            sessionStorage.setItem('formSubmitted', 'true');
+            sessionStorage.setItem('submissionTime', new Date().toISOString());
             
-            // Show thank you popup
-            createThankYouPopup();
-            
-            // Reset form
-            form.reset();
+            // Redirect to thank you page
+            window.location.href = 'thank-you.html';
         } else {
+            // Reset button and show error
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
             alert('There was an error submitting the form. Please try again.');
         }
     })
     .catch(error => {
         console.error('Error:', error);
+        // Reset button and show error
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
         alert('There was an error submitting the form. Please try again.');
     });
 }
@@ -130,38 +91,60 @@ const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
 const hamburger = document.querySelector('.hamburger');
 
 function openMobileMenu() {
-    mobileMenu.classList.add('open');
-    mobileMenuOverlay.classList.remove('hidden');
-    hamburger.classList.add('open');
+    if (mobileMenu) {
+        mobileMenu.classList.add('open');
+    }
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.classList.remove('hidden');
+    }
+    if (hamburger) {
+        hamburger.classList.add('open');
+    }
     document.body.classList.add('menu-open');
 }
 
 function closeMobileMenu() {
-    mobileMenu.classList.remove('open');
-    mobileMenuOverlay.classList.add('hidden');
-    hamburger.classList.remove('open');
+    if (mobileMenu) {
+        mobileMenu.classList.remove('open');
+    }
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.classList.add('hidden');
+    }
+    if (hamburger) {
+        hamburger.classList.remove('open');
+    }
     document.body.classList.remove('menu-open');
 }
 
-mobileMenuButton.addEventListener('click', () => {
-    if (mobileMenu.classList.contains('open')) {
-        closeMobileMenu();
-    } else {
-        openMobileMenu();
-    }
-});
-mobileMenuClose.addEventListener('click', closeMobileMenu);
-mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', () => {
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    });
+}
+
+if (mobileMenuClose) {
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+}
+
+if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+}
 
 // Close mobile menu when clicking on a link
-const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-mobileMenuLinks.forEach(link => {
-    link.addEventListener('click', closeMobileMenu);
-});
+if (mobileMenu) {
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+}
 
 // Close mobile menu on escape key
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+    if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) {
         closeMobileMenu();
     }
 });
@@ -216,7 +199,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    showTab('project');
+    // Show default tab
+    if (tabButtons.length > 0) {
+        showTab('project');
+    }
     
     // Handle form submissions
     const forms = document.querySelectorAll('form');
@@ -226,7 +212,85 @@ document.addEventListener('DOMContentLoaded', function() {
             handleFormSubmission(this);
         });
     });
+
+    // Initialize popup on page load (only on main page)
+    if (popupModal) {
+        showPopup();
+    }
 });
 
-// Initialize popup on page load
-document.addEventListener('DOMContentLoaded', showPopup);
+// Additional utility functions
+function validateForm(form) {
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            field.classList.add('border-red-500');
+            isValid = false;
+        } else {
+            field.classList.remove('border-red-500');
+        }
+    });
+    
+    return isValid;
+}
+
+// Enhanced form submission with validation
+function enhancedFormSubmission(form) {
+    if (!validateForm(form)) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    handleFormSubmission(form);
+}
+
+// Phone number formatting (optional enhancement)
+function formatPhoneNumber(input) {
+    let value = input.value.replace(/\D/g, '');
+    if (value.length >= 10) {
+        value = value.substring(0, 10);
+        input.value = value.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+    } else {
+        input.value = value;
+    }
+}
+
+// Add phone formatting to phone inputs
+document.addEventListener('DOMContentLoaded', function() {
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
+    phoneInputs.forEach(input => {
+        input.addEventListener('input', function() {
+            formatPhoneNumber(this);
+        });
+    });
+});
+
+// Analytics and tracking functions
+function trackFormSubmission(formType) {
+    // Google Analytics tracking
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'form_submit', {
+            'form_type': formType,
+            'page_location': window.location.href
+        });
+    }
+    
+    // Facebook Pixel tracking
+    if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead', {
+            content_name: 'Central Park Inquiry',
+            content_category: 'Real Estate'
+        });
+    }
+    
+    // Add other tracking codes as needed
+}
+
+// Call tracking function before form submission
+function handleFormSubmissionWithTracking(form) {
+    const formType = form.id || 'contact_form';
+    trackFormSubmission(formType);
+    handleFormSubmission(form);
+}
